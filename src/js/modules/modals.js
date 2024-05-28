@@ -1,3 +1,5 @@
+import calcScroll from "./calcScroll";
+
 const modals = () => {
   function bindModal(
     triggerSelector,
@@ -55,22 +57,6 @@ const modals = () => {
     }, time);
   }
 
-  function calcScroll() {
-    let div = document.createElement("div");
-
-    div.style.width = "50px";
-    div.style.height = "50px";
-    div.style.overflowY = "scroll";
-
-    div.style.visibility = "none";
-
-    document.body.appendChild(div);
-    let scrollWidth = div.offsetWidth - div.clientWidth;
-    div.remove();
-
-    return scrollWidth;
-  }
-
   bindModal(
     ".popup_engineer_btn",
     ".popup_engineer",
@@ -91,7 +77,7 @@ const modals = () => {
     ".popup_calc_end_close",
     false
   );
-  // showModalByTime('.popup', 60000)
+  showModalByTime(".popup", 60000);
 };
 
 export default modals;
